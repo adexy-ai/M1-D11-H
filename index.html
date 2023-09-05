@@ -5,10 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .background{
+        background-color: aquamarine;
+      }
+      .td_class{
+        font-size: large;
+        font-style: italic;
+        color: brown;
+      }
+    </style>
   </head>
   <body>
     <!-- the name of your shop -->
+    <button onclick="addCssClassToAllLink()"> tap here to add class to the td tag </button>
     <button onclick="newHeader()">tap this button to change the text in h1</button>
+    <button onclick="changeBackgroundColor()">tap to add backgroung color</button>
+    <button onclick="changeFooter()">tap this to change the footer</button>
     <h1>This is the header</h1>
 
     <!-- To add a comment in visual studio code u need to press control k + c -->
@@ -134,6 +147,23 @@
       function newHeader() {
         const newTitle = document.querySelector("h1");
         newTitle.innerHTML = "This is another way to add a text";
+      }
+
+      function changeBackgroundColor(){
+        document.body.classList.toggle('backgroud');
+      }
+
+      function changeFooter(){
+        let newFooter = document.querySelector('footer div')
+        newFooter.innerText = 'This is a fake address'
+      }
+      function addCssClassToAllLink(){
+        let addClass = document.getElementsByTagName('td')
+        for (let classAdd of addClass){
+          classAdd.classList.toggle('td_class')
+
+        }
+        
       }
     </script>
   </body>
